@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>QR Code Generator</h2>
+<button onclick="generate()">Generate QR Code</button>
+<br><br>
+<img id="qrImage" alt="QR Code will appear here">
+
+<!-- Load libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+<script>
+function generate() {
+    // Generate UUID
+    const myUuid = uuid.v4();
+
+    // Generate QR code as Data URL
+    QRCode.toDataURL(myUuid, function (err, url) {
+        if (err) {
+            console.error(err);
+            return;
+        }
+
+        console.log("UUID:", myUuid);
+        console.log("QR URL:", url);
+
+        // Display in image
+        document.getElementById("qrImage").src = url;
+    });
+}
+</script>
+
+</body>
+</html>
