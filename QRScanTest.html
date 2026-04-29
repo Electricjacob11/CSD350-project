@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <button id="open-scanner" style="padding: 15px; font-size: 16px;">Open Scanner</button>
+
+    <div id="scanner-modal"
+        style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center;">
+        <div
+            style="background: white; padding: 20px; border-radius: 12px; width: 90%; max-width: 450px; position: relative;">
+
+            <!-- FIXED CLOSE BUTTON -->
+            <button id="close-scanner"
+                style="position: absolute; top: -40px; right: 0; background: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                CLOSE [X]
+            </button>
+
+            <div id="reader"></div>
+        </div>
+    </div>
+    <input type="text" id="outputBox" placeholder="Scanned QR result will appear here">
+
+    <script>
+        let scanner = null;
+
+        async function stopScanner() {
+            const modal = document.getElementById('scanner-modal');
+
+            if (scanner) {
+                try {
+                    // 1. Stop the camera properly
+                    await scanner.clear();
+                    scanner = null;
+                } catch (err) {
+                    console.log("Error during stop:", err);
+                }
+            }
+
+            // 2. Hide the UI
+            modal.style.display = 'none';
+            // 3. Clean up the internal HTML to prevent "ghost" cameras
+            document.getElementById('reader').innerHTML = '';
+        }
+
+        function startScanner() {
+            const modal = document.getElementById('scanner-modal');
+            modal.style.display = 'flex';
+
+            // Initialize new instance every time to avoid 'already running' errors
+            scanner = new Html5QrcodeScanner("reader", {
+                fps: 10,
+                qrbox: { width: 250, height: 250 },
+                aspectRatio: 1.0
+            });
+
+            scanner.render((text) => {
+                // ✅ Put scanned QR result into textbox
+                document.getElementById("outputBox").value = text;
+
+                stopScanner();
+            });
+        }
+
+        // Event Listeners
+        document.getElementById('open-scanner').onclick = startScanner;
+        document.getElementById('close-scanner').onclick = stopScanner;
+    </script>
+
+    <script src="https://unpkg.com/html5-qrcode"></script>
+</body>
+
+</html>
