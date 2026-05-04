@@ -1,74 +1,75 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Northern Lights Montessori Attendance Tracker</title>
+    <style>
+        body {
+            background-image: url(background.jpg);
+            background-size: auto;
+            background-position: center;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            text-align: center;
+            font-size: 50px;
+            color: yellow;
+        }
+
+        p {
+            color: white;
+            font-weight: bold;
+        }
+
+        .center {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: yellow;
+            box-sizing: border-box;
+        }
+
+        .lower {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<style>
-    body {
-        background-image: url(background.jpg);
-        background-size: auto;
-        background-position: center;
-}
-h1 {
-  font-family: Georgia, serif;
-  text-align: center;
-  font-size: 50px;
-  color: yellow;
-}
-p {
-    color: white;
-    font-weight: bold;
-}
-h1 {
-        font-family: Georgia, serif;
-        text-align: center;
-        font-size: 50px;
-        color: yellow;
-    }
-
-.center {
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: yellow;
-    box-sizing: border-box;
-}
-.lower {
-    display: flex;
-    align-items: center;
-    #justify-content: end;
-}
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-</style>
 <body>
-<br><br><br><br><br>
-<h1> Northern Lights Montessori Attendance Tracker</h1>
-<div class=center>
-<span style="padding:4px; border: 1px solid yellow;"
-<label for "login_id">Login PIN:&nbsp&nbsp</label>
-<input type="text" id="login_id" name="login_id"><br>
-<p>Student's Name:</p>
-<label for "student_firstname">First:</label>
-<input type="text" id="student_firstname" name="student_firstname"><br>
-<label for "student_lastname">Last:</label>
-<input type="text" id="student_lastname" name="student_lastname"><br>
-<div class="buttons">
-<input type="submit" value="Submit">
+    <br><br><br><br><br>
+    <h1>Northern Lights Montessori Attendance Tracker</h1>
+
+    <div class="center">
+        <span style="padding:4px; border: 1px solid yellow;">
+            <label for="login_id">Login PIN:&nbsp;&nbsp;</label>
+            <input type="text" id="login_id" name="login_id"><br>
+
+            <p>Student's Name:</p>
+            <label for="student_firstname">First:</label>
+            <input type="text" id="student_firstname" name="student_firstname"><br>
+
+            <label for="student_lastname">Last:</label>
+            <input type="text" id="student_lastname" name="student_lastname"><br>
+
+            <div class="buttons">
+                <input type="submit" value="Submit">
+            </div>
+        </span>
+    </div>
+
+<div class="lower">
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <input type="submit" value="Admin Tasks">
 </div>
-</span>
-<div class=lower>
-<br><br><br><br><br><br><br><br><br><br><br>
-<input type="submit" value="Admin Tasks">
-</div>
-</style>
+</body>
 </html>
