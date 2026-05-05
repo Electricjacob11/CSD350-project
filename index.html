@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,6 +46,7 @@
         }
     </style>
 </head>
+
 <body>
     <br><br><br><br><br>
     <h1>Northern Lights Montessori Attendance Tracker</h1>
@@ -62,14 +64,18 @@
             <input type="text" id="student_lastname" name="student_lastname"><br>
 
             <div class="buttons">
-                <input type="submit" value="Submit">
+                <input type="button" value="Find Student" onclick="findStudent()">
             </div>
         </span>
+        <div id="result" class="center"></div>
     </div>
 
-<div class="lower">
-    <br><br><br><br><br><br><br><br><br><br><br>
-    <input type="submit" value="Admin Tasks">
-</div>
+    <div class="lower">
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <input type="submit" value="Admin Tasks">
+    </div>
+
+    <script src="attendancehandler.js"></script>
 </body>
+
 </html>
