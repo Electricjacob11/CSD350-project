@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,31 +46,34 @@
         }
     </style>
 </head>
+
 <body>
     <br><br><br><br><br>
     <h1>Northern Lights Montessori Attendance Tracker</h1>
 
     <div class="center">
         <span style="padding:4px; border: 1px solid yellow;">
-            <label for="login_id">Login PIN:&nbsp;&nbsp;</label>
-            <input type="text" id="login_id" name="login_id"><br>
+            <p id="errors"></p>
+            <form action="checkin.php" id="checkin">
+                <label for="login_id">Login PIN:&nbsp;&nbsp;</label>
+                <input type="text" id="login_id" name="login_id"><br>
 
-            <p>Student's Name:</p>
-            <label for="student_firstname">First:</label>
-            <input type="text" id="student_firstname" name="student_firstname"><br>
+                <p>Student's Name:</p>
+                <label for="student_firstname">First:</label>
+                <input type="text" id="student_firstname" name="student_firstname"><br>
 
-            <label for="student_lastname">Last:</label>
-            <input type="text" id="student_lastname" name="student_lastname"><br>
+                <label for="student_lastname">Last:</label>
+                <input type="text" id="student_lastname" name="student_lastname"><br>
 
-            <div class="buttons">
-                <input type="submit" value="Submit">
-            </div>
+                <button type="submit" name="login">Submit</button>
+            </form>
         </span>
     </div>
 
-<div class="lower">
-    <br><br><br><br><br><br><br><br><br><br><br>
-    <input type="submit" value="Admin Tasks">
-</div>
+    <div class="lower">
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <input type="submit" value="Admin Tasks">
+    </div>
 </body>
+
 </html>
